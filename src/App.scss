@@ -1,40 +1,96 @@
+@import "styles/share";
+@import "styles/_colors";
 
-$logo-height: 40vmin;
-.App {
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  color: $myBlue;
+}
+
+
+@mixin important-text {
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+  border: 1px solid blue;
+}
+
+.danger {
+  @include important-text;
+  background-color: green;
+}
+
+@mixin custom-border($color, $width) {
+   border: $width solid $color;
+}
+
+.myArticle {
+  @include custom-border(blue, 1px);  // 调用混入，并传递两个参数
+}
+
+.myNotes {
+  @include custom-border(red, 2px); // 调用混入，并传递两个参数
+}
+
+.button-basic  {
+  border: none;
+  padding: 15px 30px;
   text-align: center;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.App-logo {
-  height: $logo-height;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.button-submit {
+  @extend .button-basic;
+  background-color: green;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.button-report {
+  @extend .button-basic;
+  background-color: red;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+//$logo-height: 40vmin;
+//.App {
+//  text-align: center;
+//}
+//
+//.App-logo {
+//  height: $logo-height;
+//  pointer-events: none;
+//}
+//
+//@media (prefers-reduced-motion: no-preference) {
+//  .App-logo {
+//    animation: App-logo-spin infinite 20s linear;
+//  }
+//}
+//
+//.App-header {
+//  background-color: #282c34;
+//  min-height: 100vh;
+//  display: flex;
+//  flex-direction: column;
+//  align-items: center;
+//  justify-content: center;
+//  font-size: calc(10px + 2vmin);
+//  color: white;
+//}
+//
+//.App-link {
+//  color: #61dafb;
+//}
+//
+//@keyframes App-logo-spin {
+//  from {
+//    transform: rotate(0deg);
+//  }
+//  to {
+//    transform: rotate(360deg);
+//  }
+//}

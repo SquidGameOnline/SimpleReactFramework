@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './index.scss';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Counter from "./pages/Counter";
+import Click from "./pages/Click";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/*<App />*/}
+      <Counter/>
+      <Click/>
   </React.StrictMode>,
   document.getElementById('root')
 );

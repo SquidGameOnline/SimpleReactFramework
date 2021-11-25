@@ -1,0 +1,62 @@
+$myFont: Helvetica, sans-serif;
+$myColor: blue;
+$myFontSize: 18px;
+$myWidth: 680px;
+
+
+font {
+  family: Helvetica, sans-serif;
+  size: 18px;
+  //weight: bold;
+}
+
+text {
+  align: center;
+  transform: lowercase;
+  overflow: hidden;
+}
+
+
+
+h1 {
+  $myColor: green !global;
+  color: $myColor;
+}
+
+h2 {
+  color: $myColor;
+}
+
+body {
+  font-family: $myFont;
+  font-size: $myFontSize;
+  color: $myColor;
+}
+
+#container {
+  width: $myWidth;
+}
+
+img {
+  align-items: center;
+  width: 200px;
+  height: 200px;
+}
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+
+
